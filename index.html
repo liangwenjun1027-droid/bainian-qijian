@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>百年器间——唐至宋传统宴饮食器数据可视化</title>
+  <link rel="stylesheet" href="scroll.css">
+  <link rel="stylesheet" href="preview-interaction.css">
+  <script defer src="echarts-vendor.js"></script>
+  <script type="module" src="scroll.js"></script>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+</head>
+<body class="intro-open">
+  <section id="intro" class="intro" aria-label="百年器间——唐至宋传统宴饮食器数据可视化">
+    <div id="introFrame" class="intro-frame"><div id="introArt"></div></div>
+    <div class="intro-controls">
+      <p id="introStatus" role="status">正在备器，静候开席…</p>
+      <progress id="introProgress" max="100" value="0" aria-label="画卷加载进度"></progress>
+      <button id="enterScroll" type="button" hidden>入席观器 <span aria-hidden="true">→</span></button>
+    </div>
+  </section>
+  <nav inert class="chapter-nav" aria-label="章节导航">
+    <a href="#composition" aria-current="location">百年器间</a>
+    <span aria-hidden="true">／</span>
+    <a href="#materials">循器观史</a>
+  </nav>
+  <main inert>
+    <section id="composition" class="composition" aria-labelledby="compositionTitle">
+      <h1 id="compositionTitle" class="visually-hidden">百年器间</h1>
+      <div id="heroStage" class="hero-stage">
+        <div id="artFrame" class="art-frame">
+          <div id="previewArt" aria-label="器物与宴饮场景"></div>
+        </div>
+        <p id="loadStatus" class="load-status" role="status">正在展开画卷…</p>
+      </div>
+
+      <p class="site-disclaimer">图表据相关资料整理，部分图片为现代食物示意；仅供学习交流。</p>
+    </section>
+    <section id="materials" class="materials" hidden inert aria-label="循器观史">
+      <div class="history-tabs" role="tablist" aria-label="循器观史图表切换">
+        <button id="history-tab-materials" role="tab" type="button" aria-selected="true" aria-controls="history-panel-materials">材质流行</button>
+        <button id="history-tab-aesthetic" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="history-panel-aesthetic">审美迁移</button>
+        <button id="history-tab-combinations" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="history-panel-combinations">食器组合</button>
+      </div>
+      <div id="history-panel-materials" class="history-panel" role="tabpanel" aria-labelledby="history-tab-materials">
+        <div id="materialsChart"></div>
+      </div>
+      <div id="history-panel-aesthetic" class="history-panel" role="tabpanel" aria-labelledby="history-tab-aesthetic" hidden>
+        <div id="aestheticChart"></div>
+      </div>
+      <div id="history-panel-combinations" class="history-panel" role="tabpanel" aria-labelledby="history-tab-combinations" hidden>
+        <div id="combinationsChart"></div>
+      </div>
+      <a class="return-link" href="#composition">回到百年器间<span aria-hidden="true">←</span></a>
+    </section>
+  </main>
+</body>
+</html>
